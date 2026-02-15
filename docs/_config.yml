@@ -5,7 +5,7 @@ baseurl: "/Zakira.Imprint"
 url: "https://moaidhathot.github.io"
 
 # Theme
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 color_scheme: dark
 
 # Logo (optional - can be added later)
