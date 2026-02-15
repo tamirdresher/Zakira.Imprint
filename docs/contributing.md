@@ -255,23 +255,19 @@ Visit `http://localhost:4000` to preview.
 
 1. **Update `AgentConfig.cs`:**
    ```csharp
-   public static readonly AgentConfig NewAgent = new()
-   {
-       Name = "newagent",
-       SkillPath = ".newagent/skills/{0}",
-       SkillFileName = "SKILL.md",
-       McpConfigPath = ".newagent/mcp.json",
-       McpRootKey = "mcpServers"
-   };
+   // Add to the KnownAgents dictionary
+   ["newagent"] = new AgentDefinition(
+       Name: "newagent",
+       DetectionDir: ".newagent",
+       SkillsSubPath: ".newagent" + Path.DirectorySeparatorChar + "skills",
+       McpSubPath: ".newagent",
+       McpFileName: "mcp.json",
+       McpRootKey: "mcpServers"),
    ```
 
-2. **Add to `AllAgents` collection**
+2. **Add tests** for the new agent
 
-3. **Update MSBuild props** for default inclusion
-
-4. **Add tests** for the new agent
-
-5. **Update documentation**
+3. **Update documentation** (concepts/agents.md, reference/api.md)
 
 ### Adding New MSBuild Properties
 

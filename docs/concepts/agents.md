@@ -168,7 +168,7 @@ You can target agents that aren't in the built-in list. Imprint uses a fallback 
 For unknown agents, Imprint assumes:
 - Skills directory: `.windsurf/skills/`
 - MCP config: `.windsurf/mcp.json`
-- MCP root key: `mcpServers`
+- MCP root key: `servers`
 
 This allows targeting new AI assistants without waiting for an SDK update.
 
