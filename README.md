@@ -4,15 +4,15 @@
 
 # Imprint
 
-**Distribute AI Skills via NuGet packages** - like Roslyn Analyzers, but for AI assistants.
+**Distribute AI Skills and MCP configurations via NuGet packages**
 
 ## Overview
 
-Imprint is a pattern for distributing AI Skills (those `SKILLS.md` files for GitHub Copilot, Claude, Cursor, and other AI assistants) via NuGet packages. When you add an Imprint package to your project:
+Imprint is a pattern for distributing AI Skills (those `SKILLS.md` files for GitHub Copilot, Claude, Cursor, and other AI assistants) and MCP Server configuration via NuGet packages. When you add an Imprint package to your project:
 
 1. **On `dotnet build`**: Skills are automatically copied to each AI agent's native directory
 2. **On `dotnet clean`**: Skills are removed (including empty parent directories)
-3. **Multi-agent support**: Targets Copilot, Claude, and Cursor simultaneously — each gets files in its native location
+3. **Multi-agent support**: Targets Copilot, Claude, and Cursor simultaneously — each gets files in its native location (if exists)
 4. **All file types supported**: Not just `.md` — scripts, configs, and any other files in the `skills/` folder are included
 5. **MCP Server Injection**: Packages can inject [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server configurations into each agent's `mcp.json`
 6. **Code + Skills**: Packages can ship both a compiled DLL library **and** AI skills — consumers get runtime APIs and AI guidance from a single NuGet install
@@ -24,13 +24,32 @@ This enables scenarios like:
 - **MCP servers**: Ship MCP server configs alongside skills — consumers get both AI knowledge and tool access from a single NuGet install
 - **Library + Skills**: Ship a utility library with AI guidance on how to use it
 
+
+Library authors can choose if Skills and MCP fragments are opt-in or opt-out for consumers. By setting `ImprintEnabledByDefault` in the package's `.csproj`, authors control the default behavior:
+
+```xml
+<PropertyGroup>
+  <ImprintEnabledByDefault>false</ImprintEnabledByDefault> <!-- Opt-in: disabled unless user enables -->
+</PropertyGroup>
+```
+
+Consumers can always override this per-package using metadata on their `PackageReference`:
+
+```xml
+<PackageReference Include="SomePackage" Version="1.0.0">
+  <ImprintEnabled>false</ImprintEnabled> <!-- Disable or enable this package's skills/MCP -->
+</PackageReference>
+```
+
+The consumer's explicit setting always takes priority over the package author's default.
+
 ## Quick Start
 
 ### Consuming an Imprint Package
 
 ```bash
 # Add the package
-dotnet add package Zakira.Imprint.AzureBestPractices
+dotnet add package <some-Imprint-package>
 
 # Build to install skills (happens automatically before build)
 dotnet build
@@ -48,23 +67,13 @@ Create a new class library project and add `<Imprint>` items to declare your con
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>MyOrg.CodingStandards</PackageId>
-    <Version>1.0.0</Version>
-    
-    <!-- This is a tools-only package -->
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <DevelopmentDependency>true</DevelopmentDependency>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Zakira.Imprint.Sdk" Version="1.0.0" />
   </ItemGroup>
 
   <!-- Declare your content using <Imprint> items -->
   <ItemGroup>
-    <Imprint Include="skills\**\*" />                           <!-- Skills (default type) -->
+    <Imprint Include="skills\**\*" /> 
     <Imprint Include="mcp\*.mcp.json" Type="Mcp" />             <!-- MCP server configs -->
   </ItemGroup>
 </Project>
@@ -147,54 +156,6 @@ With `.github/` and `.claude/` directories present, installing `Zakira.Imprint.S
 | Package | Version | Description |
 |---------|---------|-------------|
 | **Zakira.Imprint.Sdk** | 1.0.0 | Core MSBuild task engine — auto-generates `.targets`, content copying, cleaning, MCP merging, multi-agent support |
-| **Sample** | 1.0.0 | Example with a demo skill + sample MCP server |
-| **Sample.FilesOnly** | 1.0.0 | Skills-only example (no compiled code) |
-
-## Project Structure
-
-```
-Imprint/
-├── Zakira.Imprint.sln
-├── nuget.config                          # Solution-level config, local package feed
-├── src/
-│   └── Zakira.Imprint.Sdk/               # Core MSBuild task engine (v1.0.0)
-│       ├── Zakira.Imprint.Sdk.csproj
-│       ├── AgentConfig.cs               # Multi-agent definitions & resolution
-│       ├── ImprintCopyContent.cs        # MSBuild Task: copy skills to all agents
-│       ├── ImprintCleanContent.cs       # MSBuild Task: clean skills on dotnet clean
-│       ├── ImprintMergeMcpServers.cs    # MSBuild Task: merge MCP fragments per agent
-│       ├── ImprintCleanMcpServers.cs    # MSBuild Task: clean managed MCP servers
-│       ├── ImprintGenerateTargets.cs    # MSBuild Task: auto-generate .targets at pack time
-│       ├── build/
-│       │   ├── Zakira.Imprint.Sdk.props       # Default property values (agent settings)
-│       │   └── Zakira.Imprint.Sdk.targets     # UsingTask + target definitions
-│       └── buildTransitive/
-│           ├── Zakira.Imprint.Sdk.props
-│           └── Zakira.Imprint.Sdk.targets     # Enables transitive consumers
-│
-├── samples/
-│   ├── Sample/                           # Example: skills + MCP + compiled code
-│   │   ├── Sample.csproj                 # Uses <Imprint> items
-│   │   ├── StringExtensions.cs
-│   │   ├── skills/
-│   │   │   └── StringUtils/
-│   │   │       └── SKILL.md
-│   │   └── mcp/
-│   │       └── Sample.mcp.json
-│   │
-│   └── Sample.FilesOnly/                 # Example: skills-only (no code)
-│       ├── Sample.FilesOnly.csproj       # Uses <Imprint> items
-│       └── skills/
-│           └── personal/
-│               └── SKILL.md
-│
-├── tests/
-│   └── Zakira.Imprint.Sdk.Tests/         # SDK unit tests
-│       └── ...
-│
-├── local-packages/                       # Local package output for testing
-└── README.md
-```
 
 ## How It Works
 
