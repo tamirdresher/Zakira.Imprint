@@ -285,5 +285,5 @@ The manifest format may evolve. The SDK will always:
 
 ## Next Steps
 
-- [Architecture Reference](/reference/architecture) - Deep dive into internals
-- [Troubleshooting](/troubleshooting) - Common manifest issues
+- [Architecture Reference]({{ site.baseurl }}/reference/architecture) - Deep dive into internals
+- [Troubleshooting]({{ site.baseurl }}/troubleshooting) - Common manifest issues

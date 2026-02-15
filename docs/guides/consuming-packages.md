@@ -392,5 +392,5 @@ ls -d .* 2>/dev/null | grep -E '\.github|\.claude|\.cursor'
 
 ## Next Steps
 
-- [Configuration Reference](/reference/configuration) - All configuration options
-- [Troubleshooting](/troubleshooting) - Common issues and solutions
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All configuration options
+- [Troubleshooting]({{ site.baseurl }}/troubleshooting) - Common issues and solutions

@@ -320,6 +320,6 @@ var preview = content.Truncate(100);
 
 ## Next Steps
 
-- [Creating Skill Packages](/guides/creating-skill-packages) - Detailed guide for skills-only
-- [Creating Code+Skills Packages](/guides/creating-code-skill-packages) - Detailed guide for hybrid
-- [Configuration Reference](/reference/configuration) - All package options
+- [Creating Skill Packages]({{ site.baseurl }}/guides/creating-skill-packages) - Detailed guide for skills-only
+- [Creating Code+Skills Packages]({{ site.baseurl }}/guides/creating-code-skill-packages) - Detailed guide for hybrid
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All package options

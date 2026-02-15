@@ -530,6 +530,6 @@ export MYORG_DATABASE_CONNECTION="Server=localhost;Database=mydb;..."
 
 ## Next Steps
 
-- [Consuming Packages](/guides/consuming-packages) - How consumers use your package
-- [Publishing Packages](/guides/publishing-packages) - Publish to NuGet.org
-- [Configuration Reference](/reference/configuration) - All MCP options
+- [Consuming Packages]({{ site.baseurl }}/guides/consuming-packages) - How consumers use your package
+- [Publishing Packages]({{ site.baseurl }}/guides/publishing-packages) - Publish to NuGet.org
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All MCP options

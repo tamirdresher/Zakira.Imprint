@@ -217,6 +217,6 @@ Or configure in your `.csproj`:
 
 ## Next Steps
 
-- [Getting Started](/getting-started) - Quick start guide
-- [Creating Skill Packages](/guides/creating-skill-packages) - Build your own packages
-- [Configuration Reference](/reference/configuration) - All configuration options
+- [Getting Started]({{ site.baseurl }}/getting-started) - Quick start guide
+- [Creating Skill Packages]({{ site.baseurl }}/guides/creating-skill-packages) - Build your own packages
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All configuration options

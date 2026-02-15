@@ -215,6 +215,6 @@ Imprint creates `.gitignore` files to prevent managed files from polluting your 
 
 ## Next Steps
 
-- [Multi-Agent Support](/concepts/agents) - How Imprint targets multiple AI assistants
-- [MCP Integration](/concepts/mcp-integration) - Distributing MCP server configurations
-- [Package Patterns](/concepts/package-patterns) - Skills-only vs code+skills
+- [Multi-Agent Support]({{ site.baseurl }}/concepts/agents) - How Imprint targets multiple AI assistants
+- [MCP Integration]({{ site.baseurl }}/concepts/mcp-integration) - Distributing MCP server configurations
+- [Package Patterns]({{ site.baseurl }}/concepts/package-patterns) - Skills-only vs code+skills

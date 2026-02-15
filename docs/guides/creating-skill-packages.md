@@ -399,6 +399,6 @@ MyOrg.Skills.Security/
 
 ## Next Steps
 
-- [Adding MCP Servers](/guides/mcp-server-configuration) - Include MCP configurations
-- [Publishing Packages](/guides/publishing-packages) - Publish to NuGet.org
-- [Configuration Reference](/reference/configuration) - All configuration options
+- [Adding MCP Servers]({{ site.baseurl }}/guides/mcp-server-configuration) - Include MCP configurations
+- [Publishing Packages]({{ site.baseurl }}/guides/publishing-packages) - Publish to NuGet.org
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All configuration options

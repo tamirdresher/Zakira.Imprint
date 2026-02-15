@@ -231,10 +231,10 @@ You can explicitly specify which agents to target:
 
 Now that you have the basics:
 
-1. **Learn the concepts**: Read [How Imprint Works](/concepts/overview) to understand the architecture
-2. **Create skill packages**: Follow the [Creating Skill Packages](/guides/creating-skill-packages) guide
-3. **Add MCP servers**: Learn about [MCP Integration](/concepts/mcp-integration)
-4. **Configure everything**: See the [Configuration Reference](/reference/configuration)
+1. **Learn the concepts**: Read [How Imprint Works]({{ site.baseurl }}/concepts/overview) to understand the architecture
+2. **Create skill packages**: Follow the [Creating Skill Packages]({{ site.baseurl }}/guides/creating-skill-packages) guide
+3. **Add MCP servers**: Learn about [MCP Integration]({{ site.baseurl }}/concepts/mcp-integration)
+4. **Configure everything**: See the [Configuration Reference]({{ site.baseurl }}/reference/configuration)
 
 ---
 
@@ -252,4 +252,4 @@ Now that you have the basics:
 2. **Check item declarations** - Ensure `<Imprint Include="...">` items are correctly defined
 3. **Rebuild** - Run `dotnet clean` then `dotnet build`
 
-See the [Troubleshooting](/troubleshooting) page for more solutions.
+See the [Troubleshooting]({{ site.baseurl }}/troubleshooting) page for more solutions.

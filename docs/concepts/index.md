@@ -17,8 +17,8 @@ Understand the core concepts behind Zakira.Imprint.
 
 This section explains the fundamental concepts of how Imprint works:
 
-- [Overview](/concepts/overview) - How Imprint works at a high level
-- [Multi-Agent Support](/concepts/agents) - Targeting multiple AI assistants
-- [MCP Integration](/concepts/mcp-integration) - Model Context Protocol server distribution
-- [Package Patterns](/concepts/package-patterns) - Skills-only vs code+skills packages
-- [Manifest System](/concepts/manifest) - How Imprint tracks installed files
+- [Overview]({{ site.baseurl }}/concepts/overview) - How Imprint works at a high level
+- [Multi-Agent Support]({{ site.baseurl }}/concepts/agents) - Targeting multiple AI assistants
+- [MCP Integration]({{ site.baseurl }}/concepts/mcp-integration) - Model Context Protocol server distribution
+- [Package Patterns]({{ site.baseurl }}/concepts/package-patterns) - Skills-only vs code+skills packages
+- [Manifest System]({{ site.baseurl }}/concepts/manifest) - How Imprint tracks installed files

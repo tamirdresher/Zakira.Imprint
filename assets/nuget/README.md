@@ -234,14 +234,7 @@ See `samples/Sample.FilesOnly` for an example.
 
 ### Code + Skills Package
 
-For packages that ship both a compiled DLL **and** AI skills:
-
-```xml
-<PropertyGroup>
-  <!-- IncludeBuildOutput defaults to true - DLL ships in lib/ -->
-  <!-- Do NOT set DevelopmentDependency - consumers need the runtime DLL -->
-</PropertyGroup>
-```
+For packages that ship both a compiled DLL **and** AI skills, you do not need to set any special properties — just include your code files and `<Imprint>` items together. The DLL will be included as usual, and skills/MCP configs will be distributed to agents.
 
 ## Configuration
 

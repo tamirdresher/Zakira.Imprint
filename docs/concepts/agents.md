@@ -294,5 +294,5 @@ Output:
 
 ## Next Steps
 
-- [MCP Integration](/concepts/mcp-integration) - How MCP servers are distributed
-- [Configuration Reference](/reference/configuration) - All agent-related properties
+- [MCP Integration]({{ site.baseurl }}/concepts/mcp-integration) - How MCP servers are distributed
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All agent-related properties

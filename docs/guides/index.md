@@ -17,8 +17,8 @@ Step-by-step tutorials for common tasks.
 
 This section contains detailed guides for working with Imprint:
 
-- [Creating Skill Packages](/guides/creating-skill-packages) - Build skills-only packages
-- [Creating Code+Skills Packages](/guides/creating-code-skill-packages) - Ship code with AI guidance
-- [MCP Server Configuration](/guides/mcp-server-configuration) - Distribute MCP servers
-- [Consuming Packages](/guides/consuming-packages) - Install and use skill packages
-- [Publishing Packages](/guides/publishing-packages) - Publish to NuGet.org
+- [Creating Skill Packages]({{ site.baseurl }}/guides/creating-skill-packages) - Build skills-only packages
+- [Creating Code+Skills Packages]({{ site.baseurl }}/guides/creating-code-skill-packages) - Ship code with AI guidance
+- [MCP Server Configuration]({{ site.baseurl }}/guides/mcp-server-configuration) - Distribute MCP servers
+- [Consuming Packages]({{ site.baseurl }}/guides/consuming-packages) - Install and use skill packages
+- [Publishing Packages]({{ site.baseurl }}/guides/publishing-packages) - Publish to NuGet.org

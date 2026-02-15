@@ -390,5 +390,5 @@ When working with the database MCP server:
 
 ## Next Steps
 
-- [MCP Server Configuration Guide](/guides/mcp-server-configuration) - Step-by-step MCP setup
-- [Configuration Reference](/reference/configuration) - MCP-related properties
+- [MCP Server Configuration Guide]({{ site.baseurl }}/guides/mcp-server-configuration) - Step-by-step MCP setup
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - MCP-related properties

@@ -17,7 +17,7 @@ Publish your skill packages to NuGet.org or private feeds.
 
 ## Prerequisites
 
-- A completed skill package (see [Creating Skill Packages](/guides/creating-skill-packages))
+- A completed skill package (see [Creating Skill Packages]({{ site.baseurl }}/guides/creating-skill-packages))
 - A NuGet.org account (for public packages)
 - An API key from NuGet.org
 
@@ -329,5 +329,5 @@ Always specify a license:
 
 ## Next Steps
 
-- [Configuration Reference](/reference/configuration) - All configuration options
-- [Troubleshooting](/troubleshooting) - Common issues
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All configuration options
+- [Troubleshooting]({{ site.baseurl }}/troubleshooting) - Common issues

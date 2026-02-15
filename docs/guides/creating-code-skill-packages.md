@@ -506,6 +506,6 @@ post.Slug = post.Title.Slugify();
 
 ## Next Steps
 
-- [MCP Server Configuration](/guides/mcp-server-configuration) - Add MCP servers
-- [Publishing Packages](/guides/publishing-packages) - Publish to NuGet.org
-- [Configuration Reference](/reference/configuration) - All options
+- [MCP Server Configuration]({{ site.baseurl }}/guides/mcp-server-configuration) - Add MCP servers
+- [Publishing Packages]({{ site.baseurl }}/guides/publishing-packages) - Publish to NuGet.org
+- [Configuration Reference]({{ site.baseurl }}/reference/configuration) - All options
