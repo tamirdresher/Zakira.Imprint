@@ -16,7 +16,7 @@ permalink: /
 Distribute AI Skills via NuGet packages. Ship SKILL.md files for GitHub Copilot, Claude, Cursor, and other AI assistants as easily as shipping a library.
 {: .fs-6 .fw-300 }
 
-[Get Started](/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get Started]({{ site.baseurl }}/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View on GitHub](https://github.com/MoaidHathot/Zakira.Imprint){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -69,6 +69,28 @@ Packages can include [Model Context Protocol (MCP)](https://modelcontextprotocol
   }
 }
 ```
+
+### Opt-In / Opt-Out Control
+
+Full control over which skills are installed:
+
+**Package authors** can make skills opt-in by default:
+```xml
+<PropertyGroup>
+  <ImprintEnabledByDefault>false</ImprintEnabledByDefault>
+</PropertyGroup>
+```
+
+**Consumers** can enable or disable any package's skills:
+```xml
+<PackageReference Include="SomePackage" Version="1.0.0">
+  <ImprintEnabled>false</ImprintEnabled> <!-- Disable this package's skills -->
+</PackageReference>
+```
+
+Consumer settings always take priority over package defaults. See the [Configuration Reference]({{ site.baseurl }}/reference/configuration#package-author-properties) for details.
+
+---
 
 ### Two Package Patterns
 
@@ -153,11 +175,21 @@ After build, the skill is available at:
 
 ## Getting Help
 
-- [Getting Started Guide](/getting-started) - First steps with Imprint
-- [Concepts](/concepts/overview) - Understand how Imprint works
-- [Guides](/guides/creating-skill-packages) - Step-by-step tutorials
-- [Reference](/reference/configuration) - Complete configuration reference
-- [Troubleshooting](/troubleshooting) - Common issues and solutions
+- [Getting Started Guide]({{ site.baseurl }}/getting-started) - First steps with Imprint
+- [Concepts]({{ site.baseurl }}/concepts/overview) - Understand how Imprint works
+- [Guides]({{ site.baseurl }}/guides/creating-skill-packages) - Step-by-step tutorials
+- [Reference]({{ site.baseurl }}/reference/configuration) - Complete configuration reference
+- [Troubleshooting]({{ site.baseurl }}/troubleshooting) - Common issues and solutions
+
+### Quick Reference
+
+| Topic | Description |
+|:------|:------------|
+| [Opt-In/Opt-Out]({{ site.baseurl }}/reference/configuration#imprintenabledbydefault) | Control which skills are enabled per-package |
+| [Agent Detection]({{ site.baseurl }}/reference/configuration#agent-detection-properties) | Configure which AI agents receive skills |
+| [Skill Prefixing]({{ site.baseurl }}/reference/configuration#skill-prefixing-properties) | Avoid naming conflicts between packages |
+| [MCP Configuration]({{ site.baseurl }}/guides/mcp-server-configuration) | Distribute MCP server configs with packages |
+| [Package Patterns]({{ site.baseurl }}/concepts/package-patterns) | Skills-only vs Code+Skills packages |
 
 ---
 
